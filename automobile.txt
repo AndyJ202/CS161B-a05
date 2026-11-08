@@ -1,0 +1,30 @@
+name;mpg;horsepower;weight
+chevrolet chevelle malibu;18;130;3504
+buick skylark 320;15;165;3693
+plymouth satellite;18;150;3436
+amc rebel sst;16;150;3433
+ford torino;17;140;3449
+ford galaxie 500;15;198;4341
+chevrolet impala;14;220;4354
+plymouth fury iii;14;215;4312
+pontiac catalina;14;225;4425
+amc ambassador dpl;15;190;3850
+dodge challenger se;15;170;3563
+plymouth 'cuda 340;14;160;3609
+chevrolet monte carlo;15;150;3761
+buick estate wagon (sw);14;225;3086
+toyota corona mark ii;24;95;2372
+plymouth duster;22;95;2833
+amc hornet;18;97;2774
+ford maverick;21;85;2587
+datsun pl510;27;88;2130
+volkswagen 1131 deluxe sedan;26;46;1835
+peugeot 504;25;87;2672
+audi 100 ls;24;90;2430
+saab 99e;25;95;2375
+bmw 2002;26;113;2234
+amc gremlin;21;90;2648
+ford f250;10;215;4615
+chevy c20;10;200;4376
+dodge d200;11;210;4382
+hi 1200d;9;193;4732
