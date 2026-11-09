@@ -2,13 +2,17 @@
 # Author:           Andy Joy
 # Assignment:       Assignment 5
 # Date:             11/07/2026
-# Description:      
-#                   
-#                   
-# Input:            
-#                   
-# Output:           
-#                   
+# Description:      This program takes a text file containing automobile data, 
+#                   and outputs a chart with some analysis. The chart contains 
+#                   make/model, MPG, HP, and weight(lbs). At the end of the 
+#                   output, it will show the car with the best and worst MPG, 
+#                   followed by the average car weight.
+# Input:            fileName as character array, and text file.
+# Output:           makeModel as 2d character array, milePerGallon as integer 
+#                   array, horsepower as integer array, weight as integer array,
+#                   maxMakeModel as character array, maxMilePerGallon as integer, 
+#                   minMakeModel as character array, minMilePerGallon as integer,
+#                   and totalWeight as double.
 # Sources:          zyBooks (12.1-12.8), Sample A05.
 #******************************************************************************/
 #include <fstream>
@@ -29,7 +33,7 @@ void printList(char makeModel[][MAXCHAR], int milePerGallon[], int horsepower[],
 void minMaxCalc(char makeModel[][MAXCHAR], int milePerGallon[], int count);
 void averageCalc(int weight[], int count);
 
-//Main function
+//main function
 int main() {
   ifstream inFile;
 
@@ -59,12 +63,12 @@ int main() {
   return 0;
 }
 
-//Welcome function
+//welcome function
 void welcome() {
   cout << "Welcome to my automobile data analysis program!" << endl;
 }
 
-//Function to open file, returns true/false if file does not open
+//openFile function opens the file and returns true/false if file does not open
 bool openFile(ifstream &inFile, char fileName[]) {
   inFile.open(fileName);
   if (!inFile) {
@@ -73,6 +77,8 @@ bool openFile(ifstream &inFile, char fileName[]) {
   return true;
 }
 
+//inFileToArray function takes data from the input file and stores it via arrays. 
+//It ignores a header line, and resests to start of file when completed.
 int inFileToArray(ifstream& inFile, char makeModel[][MAXCHAR], int milePerGallon[], int horsepower[], int weight[]) {
   int count = 0;
   char strDiscard[MAXCHAR];
@@ -94,6 +100,8 @@ int inFileToArray(ifstream& inFile, char makeModel[][MAXCHAR], int milePerGallon
   return count;
 }
 
+
+//printList function prints a chart of all the arrays gathered from file
 void printList(char makeModel[][MAXCHAR], int milePerGallon[], int horsepower[], int weight[], int count) {
   cout << "\n" << left << setw(35) << "Make & Model" << setw(10) << "MPG" << setw(10) << "HP" << "Weight" << endl;
   cout << left << setw(35) << "____________________________" << setw(10) << "___" << setw(10) << "___" << "______" << endl;
@@ -103,6 +111,7 @@ void printList(char makeModel[][MAXCHAR], int milePerGallon[], int horsepower[],
   }
 }
 
+//minMaxCalc function finds the min and max of a collum, currently it's only used for MPG
 void minMaxCalc(char makeModel[][MAXCHAR], int milePerGallon[], int count){
   int minMilePerGallon = milePerGallon[0];
   char minMakeModel [MAXCHAR];
@@ -126,6 +135,7 @@ void minMaxCalc(char makeModel[][MAXCHAR], int milePerGallon[], int count){
   cout << "The car with the worst MPG is the " << minMakeModel << " at " << minMilePerGallon << " MPG." << endl;
 }
 
+//averageCalc function finds the average of a collum, currently it's only used for car weight
 void averageCalc(int weight[], int count){
   double totalWeight = 0;
   
